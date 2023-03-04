@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using BusinessObject.Models;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess;
 
@@ -27,13 +26,9 @@ public partial class CoffeeShopContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-        var builder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-        IConfigurationRoot configuration = builder.Build();
-        optionsBuilder.UseSqlServer(configuration.GetConnectionString("CoffeeShopDB"));
-    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("server=(local);database=CoffeeShop;uid=sa;pwd=1;encrypt=optional;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -55,19 +50,21 @@ public partial class CoffeeShopContext : DbContext
             entity.HasOne(d => d.ItemIdNavigation).WithMany()
                 .HasForeignKey(d => d.ItemId)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__Cart__iid__72C60C4A");
+                .HasConstraintName("FK__Cart__iid__52593CB8");
 
             entity.HasOne(d => d.UserIdNavigation).WithMany()
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__Cart__uid__71D1E811");
+                .HasConstraintName("FK__Cart__uid__5165187F");
         });
 
         modelBuilder.Entity<Item>(entity =>
         {
-            entity.HasKey(e => e.ItemId).HasName("PK__Item__3213E83FBE4CE8D1");
+            entity.HasKey(e => e.ItemId).HasName("PK__Item__3213E83FD2B67A40");
 
             entity.ToTable("Item");
+
+            entity.HasIndex(e => e.ItemName, "UQ__Item__72E12F1B351C618A").IsUnique();
 
             entity.Property(e => e.ItemId).HasColumnName("id");
             entity.Property(e => e.Descr)
@@ -90,7 +87,7 @@ public partial class CoffeeShopContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PK__Orders__C2FFCF13CB1E6200");
+            entity.HasKey(e => e.OrderId).HasName("PK__Orders__C2FFCF1399DAC003");
 
             entity.Property(e => e.OrderId).HasColumnName("oid");
             entity.Property(e => e.Total)
@@ -102,7 +99,7 @@ public partial class CoffeeShopContext : DbContext
             entity.HasOne(d => d.UserIdNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__Orders__uid__76969D2E");
+                .HasConstraintName("FK__Orders__uid__5629CD9C");
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>
@@ -124,17 +121,21 @@ public partial class CoffeeShopContext : DbContext
 
             entity.HasOne(d => d.ItemIdNavigation).WithMany()
                 .HasForeignKey(d => d.ItemId)
-                .HasConstraintName("FK__OrderDetail__iid__7A672E12");
+                .HasConstraintName("FK__OrderDetail__iid__59FA5E80");
 
             entity.HasOne(d => d.OrderIdNavigation).WithMany()
                 .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__OrderDetail__oid__797309D9");
+                .HasConstraintName("FK__OrderDetail__oid__59063A47");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__3213E83F63B8DC84");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__3213E83F3FE134E2");
+
+            entity.HasIndex(e => e.UserName, "UQ__Users__72E12F1B48F61148").IsUnique();
+
+            entity.HasIndex(e => e.Email, "UQ__Users__AB6E616400BA2929").IsUnique();
 
             entity.Property(e => e.UserId).HasColumnName("id");
             entity.Property(e => e.Email)

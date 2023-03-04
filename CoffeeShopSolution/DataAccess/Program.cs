@@ -5,7 +5,6 @@ namespace DataAccess {
     internal class Program {
         static void Main(string[] args) {
             var context = new CoffeeShopContext();
-            //add Items
             Item it = new Item();
             it.ItemName = "Test";
             it.Descr = "Test";

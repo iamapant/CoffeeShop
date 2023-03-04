@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using BusinessObject.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccess;
 
-public partial class CoffeeShopContext : DbContext
-{
-    public CoffeeShopContext()
-    {
+public partial class CoffeeShopContext : DbContext {
+    public CoffeeShopContext() {
     }
 
     public CoffeeShopContext(DbContextOptions<CoffeeShopContext> options)
-        : base(options)
-    {
+        : base(options) {
     }
 
     public virtual DbSet<Cart> Carts { get; set; }
@@ -26,14 +24,21 @@ public partial class CoffeeShopContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server=(local);database=CoffeeShop;uid=sa;pwd=1;encrypt=optional;");
+    internal User admin;
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Cart>(entity =>
-        {
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+        IConfiguration configuration = new ConfigurationBuilder().
+            SetBasePath(Directory.GetCurrentDirectory()).
+            AddJsonFile("appsettings.json", true, true).Build();
+        optionsBuilder.UseSqlServer(configuration["ConnectionStrings:CoffeeShopDB"]);
+        admin = new User {
+            UserName = configuration["account:admin:username"],
+            Password = configuration["account:admin:password"]
+        };
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        modelBuilder.Entity<Cart>(entity => {
             entity
                 .HasNoKey()
                 .ToTable("Cart");
@@ -58,8 +63,7 @@ public partial class CoffeeShopContext : DbContext
                 .HasConstraintName("FK__Cart__uid__5165187F");
         });
 
-        modelBuilder.Entity<Item>(entity =>
-        {
+        modelBuilder.Entity<Item>(entity => {
             entity.HasKey(e => e.ItemId).HasName("PK__Item__3213E83FD2B67A40");
 
             entity.ToTable("Item");
@@ -85,8 +89,7 @@ public partial class CoffeeShopContext : DbContext
                 .HasColumnName("type");
         });
 
-        modelBuilder.Entity<Order>(entity =>
-        {
+        modelBuilder.Entity<Order>(entity => {
             entity.HasKey(e => e.OrderId).HasName("PK__Orders__C2FFCF1399DAC003");
 
             entity.Property(e => e.OrderId).HasColumnName("oid");
@@ -102,8 +105,7 @@ public partial class CoffeeShopContext : DbContext
                 .HasConstraintName("FK__Orders__uid__5629CD9C");
         });
 
-        modelBuilder.Entity<OrderDetail>(entity =>
-        {
+        modelBuilder.Entity<OrderDetail>(entity => {
             entity.HasNoKey();
 
             entity.Property(e => e.Amount)
@@ -129,8 +131,7 @@ public partial class CoffeeShopContext : DbContext
                 .HasConstraintName("FK__OrderDetail__oid__59063A47");
         });
 
-        modelBuilder.Entity<User>(entity =>
-        {
+        modelBuilder.Entity<User>(entity => {
             entity.HasKey(e => e.UserId).HasName("PK__Users__3213E83F3FE134E2");
 
             entity.HasIndex(e => e.UserName, "UQ__Users__72E12F1B48F61148").IsUnique();

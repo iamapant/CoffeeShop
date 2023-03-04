@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace BusinessObject.Models;
 
-public partial class User
-{
+public partial class User {
     public int UserId { get; set; }
 
     public string UserName { get; set; } = null!;

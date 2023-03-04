@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace BusinessObject.Models;
 
-public partial class Cart
-{
+public partial class Cart {
     public int? UserId { get; set; }
 
     public int? ItemId { get; set; }

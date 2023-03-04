@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using BusinessObject.Models;
-using DataAccess.Repositories;
+using DataAccess.Repositories.Repo;
 
-namespace DataAccess {
+namespace DataAccess
+{
     internal class Program {
         static void Main(string[] args) {
             UserRepository repository = new UserRepository();

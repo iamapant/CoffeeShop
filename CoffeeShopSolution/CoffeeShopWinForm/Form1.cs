@@ -1,9 +1,10 @@
 using BusinessObject.Models;
 using DataAccess;
-using DataAccess.Repositories;
+using DataAccess.Repositories.Repo;
 using Microsoft.IdentityModel.Tokens;
 
-namespace CoffeeShopWinForm {
+namespace CoffeeShopWinForm
+{
     public partial class Form1 : Form {
         //This form is for 'initial login'. DO NOT change name until it's design is finalized
         UserRepository repository = new UserRepository();

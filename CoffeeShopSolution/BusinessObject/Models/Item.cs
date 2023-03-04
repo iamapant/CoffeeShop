@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace BusinessObject.Models;
 
-public partial class Item
-{
+public partial class Item {
     public int ItemId { get; set; }
 
     public string ItemName { get; set; } = null!;

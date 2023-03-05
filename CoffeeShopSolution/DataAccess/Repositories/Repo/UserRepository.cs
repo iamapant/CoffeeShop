@@ -27,7 +27,7 @@ namespace DataAccess.Repositories.Repo {
             if (user == null) throw new Exception("Input user is null.");
             else {
                 if (user.UserName == null) throw new Exception("Username must not be empty.");
-                else if (user.Password == null) throw new Exception("Password must not be empty.");
+                if (user.Password == null) throw new Exception("Password must not be empty.");
                 else if (user.Email == null) throw new Exception("E-mail must not be empty.");
                 if (user.UserName == context.admin.UserName || user.Email == context.admin.UserName) throw new Exception("Username must not be 'admin'.");
                 try {
@@ -62,9 +62,12 @@ namespace DataAccess.Repositories.Repo {
         public void UpdateUser(User user) {
             if (user == null) throw new Exception("Input user is null.");
             else {
+                //check for null
                 if (user.UserName == null) throw new Exception("Username must not be empty.");
                 else if (user.Password == null) throw new Exception("Password must not be empty.");
                 else if (user.Email == null) throw new Exception("E-mail nust not be empty.");
+                //check for changes
+                if (user.Equals(GetUserById(user.UserId))) throw new Exception("No changes occurs.");
                 try {
                     if (GetUserById(user.UserId) != null) {
                         context.Users.Update(user);

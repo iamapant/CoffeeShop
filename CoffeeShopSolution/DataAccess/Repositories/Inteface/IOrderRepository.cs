@@ -10,10 +10,10 @@ namespace DataAccess.Repositories.Inteface {
         IEnumerable<Order> GetOrders();
         IEnumerable<OrderDetail> GetOrdersDetail();
         IEnumerable<Order> GetOrdersByUserId(int id);
-        IEnumerable<OrderDetail> GetOrdersDetail(int OrderId);
+        IEnumerable<OrderDetail> GetOrdersDetailByOrderId(int OrderId);
         decimal GetOrderTotal(int OrderId);
         int GetOrdersCountByUserId(int id);
-        string AddNewOrder(int id);
+        void AddNewOrder(int id);
 
     }
 }

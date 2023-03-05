@@ -1,0 +1,12 @@
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.csproj.AssemblyReference.cache
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form1.resources
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form2.resources
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form3.resources
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form4.resources
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form5.resources
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form6.resources
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.csproj.GenerateResource.cache
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.GeneratedMSBuildEditorConfig.editorconfig
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.AssemblyInfoInputs.cache
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.AssemblyInfo.cs
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.csproj.CoreCompileInputs.cache

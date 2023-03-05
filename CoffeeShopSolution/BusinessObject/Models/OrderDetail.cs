@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace BusinessObject.Models;
 
-public partial class OrderDetail {
+public partial class OrderDetail
+{
     public int? OrderId { get; set; }
 
     public int? ItemId { get; set; }
 
-    public int? Amount { get; set; }
+    public int Amount { get; set; }
 
     public string? Note { get; set; }
 

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace BusinessObject.Models;
 
-public partial class Item {
+public partial class Item
+{
     public int ItemId { get; set; }
 
     public string ItemName { get; set; } = null!;
@@ -12,7 +13,7 @@ public partial class Item {
 
     public string? ItemType { get; set; }
 
-    public decimal? Price { get; set; }
+    public decimal Price { get; set; }
 
-    public int? Stock { get; set; }
+    public int Stock { get; set; }
 }

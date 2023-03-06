@@ -6,7 +6,7 @@ namespace DataAccess
 {
     internal class Program {
         static void Main(string[] args) {
-            //UserRepository repository = new UserRepository();
+            UserRepository Urepository = new UserRepository();
             //try {
             //    repository.AddUser(new User { UserName = "c", Email = "c@a.a", Password = "c" });
             //}
@@ -36,7 +36,7 @@ namespace DataAccess
             //Console.WriteLine(repository.GetUserById(1).UserId);
 
 
-            //ItemRepository Irepository = new ItemRepository();
+            ItemRepository Irepository = new ItemRepository();
             //try {
             //    Item item1 = new Item { ItemName = "a", Price = 5, Stock = 5 };
             //    Item item2 = new Item { ItemName = "b", Price = 5, Stock = 5 };
@@ -62,7 +62,7 @@ namespace DataAccess
             //}
 
 
-            //CartRepository Crepository = new CartRepository();
+            CartRepository Crepository = new CartRepository();
             //try {
             //    Crepository.AddCartItem(1, 1, 7, null);
             //    Crepository.AddCartItem(1, 2, 3, "hello");
@@ -89,10 +89,11 @@ namespace DataAccess
             //    var detail = Orepository.GetOrdersDetailByOrderId(order.OrderId);
             //    Console.WriteLine("OID: " + order.OrderId + "\tAmount: "+order.Total);
             //}
-            var Details = Orepository.GetOrdersDetailByOrderId(OrderList.Last().OrderId);
-            foreach (var detail in Details) {
-                Console.WriteLine("OrderID: "+detail.OrderId+"\tItemID: "+detail.ItemId+"\tAmount: "+detail.Amount+"\tDate: "+detail.OrderDate);
-            }
+            //var Details = Orepository.GetOrdersDetailByOrderId(OrderList.Last().OrderId);
+            //foreach (var detail in Details) {
+            //    Console.WriteLine("OrderID: "+detail.OrderId+"\tItemID: "+detail.ItemId+"\tAmount: "+detail.Amount+"\tDate: "+detail.OrderDate);
+            //}
+
         }
     }
 }

@@ -27,13 +27,13 @@ public partial class CoffeeShopContext : DbContext {
 
     protected internal User admin = getAdmin();
 
-    private static User getAdmin() {
+    public static User getAdmin() {
         User admin = new User();
         IConfiguration configuration = new ConfigurationBuilder().
             SetBasePath(Directory.GetCurrentDirectory()).
             AddJsonFile("appsettings.json", true, true).Build();
         admin = new User {
-            UserName = configuration["account:admin:username"],
+            UserName = configuration[key: "account:admin:username"],
             Password = configuration["account:admin:password"]
         };
         return admin;

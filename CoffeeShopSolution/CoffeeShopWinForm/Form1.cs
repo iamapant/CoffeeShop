@@ -37,9 +37,15 @@ namespace CoffeeShopWinForm
             }
             if(checkUser && checkPass) {
                 User user = repository.GetUserByLogin(txtUser.Text.Trim(), txtPass.Text.Trim());
-                if (user != null) { 
+                if (user != null) {
+                    if(user.UserName == "admin") {
+                        Form6 frmAdmin = new Form6(user);
+                        frmAdmin.ShowDialog();
+                        return;
+                    }
                     Form2 frm = new Form2(user);
                     frm.ShowDialog();
+                    return;
                 }
                 else MessageBox.Show("Cannot find user.");
             }

@@ -7,27 +7,24 @@ namespace DataAccess
     internal class Program {
         static void Main(string[] args) {
             UserRepository Urepository = new UserRepository();
-            //try {
-            //    repository.AddUser(new User { UserName = "c", Email = "c@a.a", Password = "c" });
-            //}
-            //catch (Exception ex) {
-            //    Console.WriteLine(ex.Message);
-            //}
-            //try {
-            //    repository.DeleteUser(new User { UserId = 1, UserName = "c", Email = "c@c.c", Password = "c" });
-            //}
-            //catch (Exception ex) {
-            //    Console.WriteLine(ex);
-            //}
+            try {
+                Urepository.AddUser(new User { UserName = "a", Email = "c@a.a", Password = "c" });
+            } catch(Exception ex) {
+                Console.WriteLine("Add "+ex.Message);
+            }
+            try {
+                Urepository.DeleteUser(new User { UserId = 1, UserName = "c", Email = "c@c.c", Password = "c" });
+            } catch(Exception ex) {
+                Console.WriteLine("Delete "+ex);
+            }
 
-            //try {
-            //    User u = repository.GetUserById(1);
-            //    u.UserName = "b";
-            //    repository.UpdateUser(u);
-            //}
-            //catch (Exception ex) {
-            //    Console.WriteLine(ex.Message);
-            //}
+            try {
+                User u = Urepository.GetUserById(1);
+                u.UserName = "b";
+                Urepository.UpdateUser(u);
+            } catch(Exception ex) {
+                Console.WriteLine("Update"+ex.Message);
+            }
 
             //var UserList = repository.GetUsers();
             //foreach (var user in UserList) {

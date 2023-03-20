@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bpnw1Igua1fWdsqIjy9KdmU/PFxvIlHBQmkb3VlXY0HEVZZJlmEeOI93uwut04Zw1bdKXu76ZHgokePfcehjLg==",
+  "dgSpecHash": "2iY9D4iiNC74uWdPoeKqG7nXDo9renOMpkljsKMUMGLlZVqIWnIgHQvr+Ry0Ov4a8RU8AteTOrfBGHbflzFMtQ==",
   "success": true,
-  "projectFilePath": "C:\\PRN211\\CoffeeShop\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj",
+  "projectFilePath": "D:\\CoffeeShop_Project\\CoffeeShopSolution\\BusinessObject\\BusinessObject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iamap\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\iamap\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -19,6 +19,7 @@
     "C:\\Users\\iamap\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.3\\microsoft.entityframeworkcore.sqlserver.7.0.3.nupkg.sha512",
     "C:\\Users\\iamap\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\iamap\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "C:\\Users\\iamap\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\iamap\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\iamap\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\iamap\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",

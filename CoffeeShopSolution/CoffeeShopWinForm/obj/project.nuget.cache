@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6qXSJ2ghGfpyoMnFa2ebV1XGe1LJ+C0lbTw7U8LFSDRwGPG5K7mfypkM9ctGclScqyv/GGDrLUc9R1txyRZesw==",
+  "dgSpecHash": "8dfN/rxliKI5+Z9t14hB+g6lyhI2HayqZJLDuN2SQtcHdI35NdopZnKJmPRPoiCuCq7wDAlk/4OTyuGewkV5CQ==",
   "success": true,
-  "projectFilePath": "C:\\PRN211\\CoffeeShop\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
+  "projectFilePath": "D:\\CoffeeShop_Project\\CoffeeShopSolution\\CoffeeShopWinForm\\CoffeeShopWinForm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iamap\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\iamap\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

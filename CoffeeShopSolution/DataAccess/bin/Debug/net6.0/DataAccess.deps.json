@@ -711,7 +711,8 @@
       },
       "BusinessObject/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
+          "Microsoft.Extensions.Configuration": "7.0.0"
         },
         "runtime": {
           "BusinessObject.dll": {}

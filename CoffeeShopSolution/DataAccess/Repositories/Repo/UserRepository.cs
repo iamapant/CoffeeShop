@@ -35,7 +35,7 @@ namespace DataAccess.Repositories.Repo {
                     context.SaveChanges();
                 }
                 catch (Exception ex) {
-                    throw new Exception("User already exists.");
+                    throw new Exception(ex.InnerException.Message);
                 }
             }
         }
@@ -67,7 +67,8 @@ namespace DataAccess.Repositories.Repo {
                 else if (user.Password == null) throw new Exception("Password must not be empty.");
                 else if (user.Email == null) throw new Exception("E-mail nust not be empty.");
                 //check for changes
-                if (user.Equals(GetUserById(user.UserId))) throw new Exception("No changes occurs.");
+                if (user.UserName.Equals(GetUserById(user.UserId).UserName) && user.Password.Equals(GetUserById(user.UserId).Password) &&
+                    user.Email.Equals(GetUserById(user.UserId).Email)) throw new Exception("No changes occurs.");
                 try {
                     if (GetUserById(user.UserId) != null) {
                         context.Users.Update(user);

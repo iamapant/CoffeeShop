@@ -8,22 +8,23 @@ namespace DataAccess
         static void Main(string[] args) {
             UserRepository Urepository = new UserRepository();
             try {
-                Urepository.AddUser(new User { UserName = "a", Email = "c@a.a", Password = "c" });
+                Urepository.AddUser(new User { UserName = "a", Email = "c@a.a", Password = "a" });
             } catch(Exception ex) {
                 Console.WriteLine("Add "+ex.Message);
             }
-            try {
-                Urepository.DeleteUser(new User { UserId = 1, UserName = "c", Email = "c@c.c", Password = "c" });
-            } catch(Exception ex) {
-                Console.WriteLine("Delete "+ex);
-            }
 
             try {
-                User u = Urepository.GetUserById(1);
+                User u = Urepository.GetUserByLogin("a", "a");
                 u.UserName = "b";
                 Urepository.UpdateUser(u);
             } catch(Exception ex) {
-                Console.WriteLine("Update"+ex.Message);
+                Console.WriteLine("Update" + ex.Message);
+            }
+
+            try {
+                Urepository.DeleteUser(Urepository.GetUserByLogin("b","a"));
+            } catch(Exception ex) {
+                Console.WriteLine("Delete "+ex);
             }
 
             //var UserList = repository.GetUsers();

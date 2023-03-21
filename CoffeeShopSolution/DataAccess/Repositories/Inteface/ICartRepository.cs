@@ -9,7 +9,7 @@ namespace DataAccess.Repositories.Inteface {
     public interface ICartRepository {
         IEnumerable<Cart> GetCarts();
         IEnumerable<Cart> GetCartByUserId(int id);
-        void AddCartItem(int UserId, int ItemId, int amount, string? note);
+        void AddCartItem(int UserId, int ItemId, int amount, string? note, int price);
         void DeleteCartItem(int UserId, int ItemId, int amount, string? note);
     }
 }

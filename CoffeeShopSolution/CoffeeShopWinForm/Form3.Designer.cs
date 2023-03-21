@@ -23,17 +23,18 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            fpCatalog = new FlowLayoutPanel();
             btnProfile = new Button();
             btnCart = new Button();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // fpCatalog
             // 
-            flowLayoutPanel1.Location = new Point(12, 46);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(452, 516);
-            flowLayoutPanel1.TabIndex = 0;
+            fpCatalog.AutoScroll = true;
+            fpCatalog.Location = new Point(0, 41);
+            fpCatalog.Name = "fpCatalog";
+            fpCatalog.Size = new Size(543, 533);
+            fpCatalog.TabIndex = 0;
             // 
             // btnProfile
             // 
@@ -47,7 +48,7 @@
             // 
             // btnCart
             // 
-            btnCart.Location = new Point(389, 12);
+            btnCart.Location = new Point(456, 12);
             btnCart.Name = "btnCart";
             btnCart.Size = new Size(75, 23);
             btnCart.TabIndex = 2;
@@ -59,19 +60,21 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(476, 574);
+            ClientSize = new Size(543, 574);
             Controls.Add(btnCart);
             Controls.Add(btnProfile);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(fpCatalog);
             Name = "Form3";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
+            FormClosing += Form3_FormClosing;
             Load += Form3_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel fpCatalog;
         private Button btnProfile;
         private Button btnCart;
     }

@@ -86,6 +86,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form7";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form7";
             Load += Form7_Load;
             ResumeLayout(false);

@@ -240,3 +240,5 @@ D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-wind
 D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.pdb
 D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.genruntimeconfig.cache
 D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\ref\CoffeeShopWinForm.dll
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Properties.Resources.resources
+D:\CoffeeShop_Project\CoffeeShopSolution\CoffeeShopWinForm\obj\Debug\net6.0-windows\CoffeeShopWinForm.Form8.resources

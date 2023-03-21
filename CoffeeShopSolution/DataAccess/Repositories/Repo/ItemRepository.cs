@@ -27,7 +27,7 @@ namespace DataAccess.Repositories.Repo {
 
         public void DeleteItem(int id) {
             if (id == null) throw new Exception("Input id is null");
-            if (GetItems().SingleOrDefault(i => i.ItemId == id) == null) throw new Exception("Cannot find item to delete.");
+            if (context.Items.SingleOrDefault(i => i.ItemId == id) == null) throw new Exception("Cannot find item to delete.");
             try {
                 context.Items.Remove(GetItemById(id));
                 context.SaveChanges();
@@ -37,7 +37,7 @@ namespace DataAccess.Repositories.Repo {
             }
         }
 
-        public Item? GetItemById(int id) => GetItems().SingleOrDefault(i => i.ItemId == id);
+        public Item? GetItemById(int id) => context.Items.SingleOrDefault(i => i.ItemId == id);
 
         public IEnumerable<Item> GetItems() => context.Items;
 

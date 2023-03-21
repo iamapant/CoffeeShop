@@ -50,10 +50,14 @@ namespace CoffeeShopWinForm
                     if(user.UserName == "admin") {
                         Form6 frmAdmin = new Form6(user);
                         frmAdmin.ShowDialog();
+                        Hide();
+                        this.ShowInTaskbar = false;
                         return;
                     }
                     Form3 frm = new Form3(user);
                     frm.ShowDialog();
+                    Hide();
+                    this.ShowInTaskbar = false;
                     return;
                 }
                 else MessageBox.Show("Username or password incorrect.");

@@ -38,8 +38,8 @@ namespace DataAccess.Migrations
                         .HasColumnName("iid");
 
                     b.Property<string>("Note")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
                         .HasColumnName("note");
 
                     b.Property<int?>("UserId")
@@ -137,8 +137,8 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Note")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
                         .HasColumnName("note")
                         .HasDefaultValueSql("('')");
 

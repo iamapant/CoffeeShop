@@ -13,6 +13,8 @@ public partial class Order
 
     public string? Address { get; set; }
 
+    public DateTime? Odate { get; set; }
+
     public decimal Total { get; set; }
 
     public virtual User? UserIdNavigation { get; set; }

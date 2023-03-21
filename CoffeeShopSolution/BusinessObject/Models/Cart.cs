@@ -11,6 +11,8 @@ public partial class Cart
 
     public int Amount { get; set; }
 
+    public decimal? AddedPrice { get; set; }
+
     public string? Note { get; set; }
 
     public virtual Item? ItemIdNavigation { get; set; }
